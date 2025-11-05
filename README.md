@@ -59,11 +59,11 @@ Prevents inconsistent plans (e.g., wrong time order, missing transfers).
 Makes creation of complex objects clearer and safer.
 Enables immutable, validated final itineraries.
 
-### 4) Facade 
-Purpose: The UI should not coordinate adapters, strategies, and pipelines directly. A Facade exposes high-level entry points like “plan trip” or “search lodging,” hiding internal complexity.
+### 4) Observer
+Purpose: Travel data can change dynamically (price, availability, schedule). The Observer pattern lets data sources publish updates that interested parts (alerts, UI) subscribe to.
 
 #### Advantages:
 
-Keeps the UI simple and stable even as internals evolve.
-Reduces coupling between presentation and core layers.
-Makes end-to-end testing easier and clearer.
+Removes the need for constant manual polling.
+Maintains loose coupling between data sources and listeners.
+Enables future asynchronous or message-queue integrations.
