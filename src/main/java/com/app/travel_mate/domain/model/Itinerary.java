@@ -9,8 +9,8 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-@ToString
 @Getter
 @EqualsAndHashCode
 public final class Itinerary {
@@ -27,5 +27,32 @@ public final class Itinerary {
         this.stays = stays;
         this.activities = activities;
         this.luggages = luggages;
+    }
+
+    @Override
+    public String toString() {
+        String transportDesc = transports.isEmpty() ? "  None" :
+                "  " + transports.stream()
+                        .map(t -> t.getMode() + " with " + t.getOperator() + " (Price: " + t.getPriceAmount() + ")")
+                        .collect(Collectors.joining("\n  "));
+
+        String stayDesc = stays.isEmpty() ? "  None" :
+                "  " + stays.stream()
+                        .map(s -> s.getName() + " (Price: " + s.getPriceAmount() + ")")
+                        .collect(Collectors.joining("\n  "));
+
+        String activityDesc = activities.isEmpty() ? "  None" :
+                "  " + activities.stream()
+                        .map(a -> a.getName() + " (Price: " + a.getPriceAmount() + ")")
+                        .collect(Collectors.joining("\n  "));
+
+        return "--- FINAL ITINERARY ---" +
+                "\n[TRANSPORT]" +
+                "\n" + transportDesc +
+                "\n[STAY]" +
+                "\n" + stayDesc +
+                "\n[ACTIVITIES]" +
+                "\n" + activityDesc +
+                "\n-------------------------";
     }
 }

@@ -24,7 +24,6 @@ public class DemoBookingAdapter implements AccommodationProvider {
 
         return getMockBookingData().stream()
                 .map(this::convertRawToStayOption)
-                .filter(option -> option.getName().contains("Hotel"))
                 .collect(Collectors.toList());
     }
 

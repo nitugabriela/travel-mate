@@ -18,5 +18,15 @@
     "distance_to_center_m": 1200,
     "checkin_time": "14:00",
     "checkout_time": "10:00"
+  },
+  {
+    "booking_ref": "BOOK-HST-543",
+    "property_title": "Hotel du Paris",
+    "type_of_stay": "Hotel",
+    "street_address": "45 Rue, Paris",
+    "price_per_night_eur": 60,
+    "distance_to_center_m": 1000,
+    "checkin_time": "14:00",
+    "checkout_time": "10:00"
   }
 ]

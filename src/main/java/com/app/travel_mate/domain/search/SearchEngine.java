@@ -3,7 +3,7 @@ package com.app.travel_mate.domain.search;
 import com.app.travel_mate.domain.model.options.*;
 import com.app.travel_mate.domain.model.queries.*;
 import com.app.travel_mate.infrastructure.providers.*;
-import com.app.travel_mate.registry.ProviderRegistry; // ela implementation
+import com.app.travel_mate.application.registry.ProviderRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
